@@ -15,7 +15,7 @@ export default function App() {
       setCurrentSlide((prev) => (prev + 1) % sampleSites.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [sampleSites.length]);
 
   return (
     <div style={{
