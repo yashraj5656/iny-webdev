@@ -130,7 +130,7 @@ export default function App() {
         padding: '30px 20px'
       }}>
         <h3>Let's Build Your Dream Website</h3>
-        <p>Email us at <a href="mailto:contact@inywebdev.com" style={{ color: '#38bdf8' }}>contact@inywebdev.com</a></p>
+        <p>Email us at <a href="mailto:inystudio1717@gmail.com" style={{ color: '#38bdf8' }}>contact@inywebdev.com</a></p>
         <p>&copy; 2025 iNY WebDev. All rights reserved.</p>
       </footer>
     </div>
