@@ -9,12 +9,15 @@ export default function App() {
     { title: 'Custom Website', url: 'https://example.com/custom', image: 'https://via.placeholder.com/800x300?text=Custom+Website' }
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0); // ✅ Add this line
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sampleSites.length);
     }, 4000);
     return () => clearInterval(interval);
   }, [sampleSites.length]);
+
 
   const testimonials = [
     { author: 'Sarah J.', quote: 'Working with iNY WebDev was a dream. They delivered everything on time and exceeded expectations!' },
