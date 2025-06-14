@@ -9,8 +9,6 @@ export default function App() {
     { title: 'Custom Website', url: 'https://example.com/custom', image: 'https://via.placeholder.com/800x300?text=Custom+Website' }
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sampleSites.length);
