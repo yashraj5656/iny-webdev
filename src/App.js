@@ -73,9 +73,9 @@ export default function App() {
     header: {
       background: 'linear-gradient(to right, #1e3a8a, #2563eb)',
       color: '#ffffff',
-      padding: '60px 20px',
+      padding: '70px 30px',
       textAlign: 'center',
-      borderRadius: '0 0 20px 20px'
+      borderRadius: '0 0 70px 70px'
     },
     heading: {
       fontSize: '3em',
@@ -135,7 +135,7 @@ export default function App() {
       textAlign: 'center',
       padding: '40px 20px',
       marginTop: '40px',
-      borderRadius: '20px 20px 0 0'
+      borderRadius: '50px 50px 0 0'
     },
     footerHeading: {
       fontSize: '1.8em',
