@@ -1,24 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 export default function App() {
-  const sampleSites = [
-    { title: 'Organic Store', url: 'https://example.com/organic', image: 'https://via.placeholder.com/800x300?text=Organic+Store' },
-    { title: 'Fitness Blog', url: 'https://example.com/fitness', image: 'https://via.placeholder.com/800x300?text=Fitness+Blog' },
-    { title: 'Startup Landing Page', url: 'https://example.com/startup', image: 'https://via.placeholder.com/800x300?text=Startup+Landing+Page' },
-    { title: 'Portfolio Site', url: 'https://example.com/portfolio', image: 'https://via.placeholder.com/800x300?text=Portfolio+Site' },
-    { title: 'Custom Website', url: 'https://example.com/custom', image: 'https://via.placeholder.com/800x300?text=Custom+Website' }
-  ];
-
-  const [currentSlide, setCurrentSlide] = useState(0); // ✅ Add this line
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % sampleSites.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [sampleSites.length]);
-
-
   const testimonials = [
     { author: 'Sarah J.', quote: 'Working with iNY WebDev was a dream. They delivered everything on time and exceeded expectations!' },
     { author: 'Mark T.', quote: 'Amazing service! Our new website boosted traffic by 300% in just a month.' },
@@ -54,6 +36,29 @@ export default function App() {
         'Proven Track Record Across Industries',
         'Detailed Project Planning & Execution'
       ]
+    }
+  ];
+
+  const promoSections = [
+    {
+      title: 'Organic Store',
+      image: 'https://via.placeholder.com/800x400?text=Organic+Store',
+      url: '#'
+    },
+    {
+      title: 'Personal Blog',
+      image: 'https://via.placeholder.com/800x400?text=Personal+Blog',
+      url: '#'
+    },
+    {
+      title: 'Landing Page',
+      image: 'https://via.placeholder.com/800x400?text=Landing+Page',
+      url: '#'
+    },
+    {
+      title: 'Portfolio Site',
+      image: 'https://via.placeholder.com/800x400?text=Portfolio+Site',
+      url: '#'
     }
   ];
 
@@ -112,11 +117,23 @@ export default function App() {
       borderRadius: '10px',
       boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
     },
+    promoImage: {
+      width: '100%',
+      borderRadius: '10px',
+      marginBottom: '15px'
+    },
+    promoButton: {
+      backgroundColor: '#2563eb',
+      color: '#fff',
+      padding: '10px 20px',
+      borderRadius: '6px',
+      textDecoration: 'none'
+    },
     footer: {
       background: 'linear-gradient(to right, #1e3a8a, #2563eb)',
       color: '#ffffff',
       textAlign: 'center',
-      padding: '60px 20px',
+      padding: '40px 20px',
       marginTop: '40px',
       borderRadius: '20px 20px 0 0'
     },
@@ -127,17 +144,6 @@ export default function App() {
     footerLink: {
       color: '#60a5fa',
       textDecoration: 'underline'
-    },
-    socialIcons: {
-      marginTop: '20px',
-      display: 'flex',
-      justifyContent: 'center',
-      gap: '20px'
-    },
-    iconLink: {
-      color: 'white',
-      fontSize: '1.5em',
-      textDecoration: 'none'
     }
   };
 
@@ -167,34 +173,16 @@ export default function App() {
         </section>
       ))}
 
-      {sampleSites.map((site, index) => (
+      {promoSections.map((promo, i) => (
         <section
-          key={`sample-${index}`}
+          key={i}
           style={styles.sectionCard}
           onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.0)'}
         >
-          <h2 style={styles.sectionHeading}>{site.title}</h2>
-          <img src={site.image} alt={site.title} style={{ width: '100%', borderRadius: '8px', marginBottom: '20px' }} />
-          <p style={styles.sectionText}>Explore our custom design for a {site.title.toLowerCase()} featuring stunning visuals, responsive layout, and optimized performance.</p>
-          <a href={site.url} target="_blank" rel="noopener noreferrer">
-            <button style={{
-              backgroundColor: '#1a3fad',
-              color: '#ffffff',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              marginTop: '20px',
-              fontWeight: '600',
-              transition: 'background-color 0.3s ease'
-            }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#14318a'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#1a3fad'}
-            >
-              View Project
-            </button>
-          </a>
+          <img src={promo.image} alt={promo.title} style={styles.promoImage} />
+          <h2 style={styles.sectionHeading}>{promo.title}</h2>
+          <a href={promo.url} style={styles.promoButton} target="_blank" rel="noopener noreferrer">View Site</a>
         </section>
       ))}
 
@@ -211,7 +199,7 @@ export default function App() {
       <footer style={styles.footer}>
         <h2 style={styles.footerHeading}>Get in Touch</h2>
         <p>Email us at <a href="mailto:inystudio1717@gmail.com" style={styles.footerLink}>inystudio1717@gmail.com</a></p>
-        <p style={{ marginTop: '20px' }}>&copy; 2025 iNY WebDev. All rights reserved.</p>
+        <p>&copy; 2025 iNY WebDev. All rights reserved.</p>
       </footer>
     </div>
   );
