@@ -58,7 +58,7 @@ export default function App() {
     },
     {
       title: 'Landing Page',
-      image: 'https://via.placeholder.com/800x400?text=Landing+Page',
+      image: '/land.png',
       url: '#'
     },
     {
