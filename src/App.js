@@ -59,7 +59,7 @@ export default function App() {
     {
       title: 'Landing Page',
       image: '/land.png',
-      url: '#'
+      url: 'https://samplelandingpagel.netlify.app/'
     },
     {
       title: 'Custom Site',
