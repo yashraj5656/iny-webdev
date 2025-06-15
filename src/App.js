@@ -63,7 +63,7 @@ export default function App() {
     },
     {
       title: 'Custom Site',
-      image: 'https://via.placeholder.com/800x400?text=Portfolio+Site',
+      image: '/custom.png',
       url: '#'
     }
   ];
