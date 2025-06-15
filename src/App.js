@@ -49,12 +49,12 @@ export default function App() {
     {
       title: 'Organic Store',
       image: 'https://via.placeholder.com/800x400?text=Organic+Store',
-      url: '#'
+      url: 'https://stayyoung.netlify.app'
     },
     {
       title: 'Personal Blog',
       image: 'https://via.placeholder.com/800x400?text=Personal+Blog',
-      url: '#'
+      url: 'https://theinytimes.netlify.app'
     },
     {
       title: 'Landing Page',
@@ -62,7 +62,7 @@ export default function App() {
       url: '#'
     },
     {
-      title: 'Portfolio Site',
+      title: 'Custom Site',
       image: 'https://via.placeholder.com/800x400?text=Portfolio+Site',
       url: '#'
     }
