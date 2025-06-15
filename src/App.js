@@ -68,110 +68,115 @@ export default function App() {
     }
   ];
 
-  const styles = {
-    container: {
-      fontFamily: 'Segoe UI, sans-serif',
-      backgroundColor: '#f5f7fb',
-      color: '#1a1a1a',
-      padding: 0,
-      margin: 0
-    },
-    header: {
-      background: 'linear-gradient(to right, #1e3a8a, #2563eb)',
-      color: '#ffffff',
-      padding: '70px 30px',
-      textAlign: 'center',
-      borderRadius: '0 0 70px 70px'
-    },
-    heading: {
-      fontSize: '3em',
-      marginBottom: '10px'
-    },
-    subheading: {
-      fontSize: '1.3em',
-      fontWeight: 300
-    },
-    sectionCard: {
-      backgroundColor: '#ffffff',
-      padding: '40px 30px',
-      margin: '30px auto',
-      maxWidth: '1000px',
-      borderRadius: '12px',
-      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-      transition: 'transform 0.3s ease'
-    },
-    sectionHeading: {
-      fontSize: '2em',
-      marginBottom: '20px',
-      color: '#1e3a8a'
-    },
-    sectionText: {
-      fontSize: '1.05em',
-      lineHeight: '1.6',
-      marginBottom: '15px'
-    },
-    bulletList: {
-      listStyle: 'disc',
-      paddingLeft: '20px',
-      fontSize: '1.05em',
-      lineHeight: '1.6'
-    },
-    testimonialCard: {
-      backgroundColor: '#f1f5f9',
-      padding: '20px',
-      margin: '15px 0',
-      borderRadius: '10px',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
-    },
-    promoImage: {
-      width: '100%',
-      borderRadius: '10px',
-      marginBottom: '15px'
-    },
-    promoButton: {
-      backgroundColor: '#2563eb',
-      color: '#fff',
-      padding: '10px 20px',
-      borderRadius: '6px',
-      textDecoration: 'none'
-    },
-    footer: {
-      background: 'linear-gradient(to right, #1e3a8a, #2563eb)',
-      color: '#ffffff',
-      textAlign: 'center',
-      padding: '40px 20px',
-      marginTop: '40px',
-      borderRadius: '50px 50px 0 0'
-    },
-    footerHeading: {
-      fontSize: '1.8em',
-      marginBottom: '10px'
-    },
-    footerLink: {
-      color: '#60a5fa',
-      textDecoration: 'underline'
-    }
-  };
-
   return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={styles.heading}>iNY WebDev</h1>
-        <p style={styles.subheading}>Crafting Strategic Digital Experiences for Lasting Impact</p>
+    <div className="app-container">
+      <style>{`
+        .app-container {
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f5f7fb;
+          color: #1a1a1a;
+          padding: 0;
+          margin: 0;
+        }
+        .header {
+          background: linear-gradient(to right, #1e3a8a, #2563eb);
+          color: #ffffff;
+          padding: 70px 30px;
+          text-align: center;
+          border-radius: 0 0 70px 70px;
+        }
+        .heading {
+          font-size: 3em;
+          margin-bottom: 10px;
+        }
+        .subheading {
+          font-size: 1.3em;
+          font-weight: 300;
+        }
+        .section-card {
+          background-color: #ffffff;
+          padding: 40px 30px;
+          margin: 30px auto;
+          max-width: 1000px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+          transform: scale(1.02);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .section-heading {
+          font-size: 2em;
+          margin-bottom: 20px;
+          color: #1e3a8a;
+        }
+        .section-text {
+          font-size: 1.05em;
+          line-height: 1.6;
+          margin-bottom: 15px;
+        }
+        .bullet-list {
+          list-style: disc;
+          padding-left: 20px;
+          font-size: 1.05em;
+          line-height: 1.6;
+        }
+        .testimonial-card {
+          background-color: #f1f5f9;
+          padding: 20px;
+          margin: 15px 0;
+          border-radius: 10px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .promo-image {
+          width: 100%;
+          border-radius: 10px;
+          margin-bottom: 15px;
+        }
+        .promo-button {
+          background-color: #2563eb;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 6px;
+          text-decoration: none;
+          display: inline-block;
+          transition: background-color 0.3s ease;
+        }
+        .promo-button:hover {
+          background-color: #1e40af;
+        }
+        .footer {
+          background: linear-gradient(to right, #1e3a8a, #2563eb);
+          color: #ffffff;
+          text-align: center;
+          padding: 40px 20px;
+          margin-top: 40px;
+          border-radius: 50px 50px 0 0;
+        }
+        .footer-heading {
+          font-size: 1.8em;
+          margin-bottom: 10px;
+        }
+        .footer-link {
+          color: #60a5fa;
+          text-decoration: underline;
+        }
+      `}</style>
+
+      <header className="header">
+        <h1 className="heading">iNY WebDev</h1>
+        <p className="subheading">Crafting Strategic Digital Experiences for Lasting Impact</p>
       </header>
 
       {sections.map((section, idx) => (
-        <section
-          key={idx}
-          data-aos="fade-up"
-          style={styles.sectionCard}
-        >
-          <h2 style={styles.sectionHeading}>{section.heading}</h2>
+        <section key={idx} data-aos="fade-up" className="section-card">
+          <h2 className="section-heading">{section.heading}</h2>
           {section.text && section.text.map((p, i) => (
-            <p key={i} style={styles.sectionText}>{p}</p>
+            <p key={i} className="section-text">{p}</p>
           ))}
           {section.list && (
-            <ul style={styles.bulletList}>
+            <ul className="bullet-list">
               {section.list.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           )}
@@ -179,32 +184,35 @@ export default function App() {
       ))}
 
       {promoSections.map((promo, i) => (
-        <section
-          key={i}
-          data-aos="zoom-in"
-          style={styles.sectionCard}
-        >
-          <img src={promo.image} alt={promo.title} style={styles.promoImage} />
-          <h2 style={styles.sectionHeading}>{promo.title}</h2>
-          <a href={promo.url} style={styles.promoButton} target="_blank" rel="noopener noreferrer">View Site</a>
+        <section key={i} data-aos="zoom-in" className="section-card">
+          <img src={promo.image} alt={promo.title} className="promo-image" />
+          <h2 className="section-heading">{promo.title}</h2>
+          <a
+            href={promo.url}
+            className="promo-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Site
+          </a>
         </section>
       ))}
 
-      <section style={styles.sectionCard} data-aos="fade-up">
-        <h2 style={styles.sectionHeading}>What Our Clients Say</h2>
+      <section className="section-card" data-aos="fade-up">
+        <h2 className="section-heading">What Our Clients Say</h2>
         {testimonials.map((testimonial, i) => (
-          <div key={i} style={styles.testimonialCard}>
+          <div key={i} className="testimonial-card">
             <p>"{testimonial.quote}"</p>
             <p><strong>- {testimonial.author}</strong></p>
           </div>
         ))}
       </section>
 
-      <footer style={styles.footer}>
-        <h2 style={styles.footerHeading}>Get in Touch</h2>
-        <p>Email us at <a href="mailto:inystudio1717@gmail.com" style={styles.footerLink}>inystudio1717@gmail.com</a></p>
+      <footer className="footer">
+        <h2 className="footer-heading">Get in Touch</h2>
+        <p>Email us at <a href="mailto:inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
         <p>&copy; 2025 iNY WebDev. All rights reserved.</p>
       </footer>
     </div>
   );
-}            
+}
