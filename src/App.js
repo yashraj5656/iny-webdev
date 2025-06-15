@@ -48,12 +48,12 @@ export default function App() {
   const promoSections = [
     {
       title: 'Organic Store',
-      image: 'https://via.placeholder.com/800x400?text=Organic+Store',
+      image:'/stayyoung.png',
       url: 'https://stayyoung.netlify.app'
     },
     {
       title: 'Personal Blog',
-      image: 'https://via.placeholder.com/800x400?text=Personal+Blog',
+      image: '/tyj.png',
       url: 'https://theinytimes.netlify.app'
     },
     {
