@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <img className="background-video" src="/inybg.jpg" alt="Background" />
+      <img className="background-video" src="/glass.jpg" alt="Background" />
 
       <style>{`
 
