@@ -66,10 +66,8 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <video className="background-video" autoPlay loop muted playsInline>
-        <source src="/scifall.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <img className="background-video" src="/inybg.jpg" alt="Background" />
+
       <style>{`
 
 
