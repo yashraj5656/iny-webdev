@@ -1,11 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './App.css';
 
 export default function App() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleMailto = () => {
+    const subject = `Message from ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
+    const mailtoLink = `mailto:inystudio1717@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
 
   const testimonials = [
     { author: 'Sarah J.', quote: 'Working with iNY WebDev was a dream. They delivered everything on time and exceeded expectations!' },
@@ -45,25 +64,7 @@ export default function App() {
     }
   ];
 
-  const promoSections = [
-  
-    {
-      title: 'Landing Page',
-      video: '/land.mp4',
-      url: 'https://samplelandingpagel.netlify.app/'
-    },
-    {
-      title: 'Personal Blog',
-      video: '/tyj.mp4',
-      url: 'https://theinytimes.netlify.app'
-    },
-
-    {
-      title: 'Organic Store',
-      video: '/stayyoung.mp4',
-      url: 'https://stayyoung.netlify.app'
-    },
-  ];
+  const promoVideos = ['/land.mp4', '/tyj.mp4', '/stayyoung.mp4'];
 
   return (
     <div className="app-container">
@@ -89,26 +90,16 @@ export default function App() {
         </section>
       ))}
 
-      {promoSections.map((promo, i) => (
+      {promoVideos.map((video, i) => (
         <section key={i} data-aos="zoom-in" className="section-card">
           <video
-            src={promo.video}
+            src={video}
             autoPlay
             loop
             muted
             playsInline
             className="promo-image"
           />
-          <h2 className="section-heading">{promo.title}</h2>
-          <br></br>
-          <a
-            href={promo.url}
-            className="glow-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Site
-          </a>
         </section>
       ))}
 
@@ -122,197 +113,45 @@ export default function App() {
         ))}
       </section>
 
+      {/* Contact Form Section */}
+      <section className="section-card" data-aos="fade-up">
+        <h2 className="section-heading">Contact Us</h2>
+        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <button type="button" className="contact-button" onClick={handleMailto}>
+            Send 
+          </button>
+        </form>
+      </section>
+
       <footer className="footer">
         <h2 className="footer-heading">Get in Touch</h2>
         <p>Email us at <a href="mailto:inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
         <p>&copy; 2025 iNY WebDev. All rights reserved.</p>
       </footer>
-
-      <style>{`
-        .background-video {
-          position: fixed;
-          top: 0;
-          left: 0;
-          z-index: -1;
-          width: 100vw;
-          height: 100vh;
-          object-fit: cover;
-          pointer-events: none;
-        }
-        .video-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(0, 0, 0, 0.3);
-          z-index: 0;
-        }
-        .app-container {
-          position: relative;
-          z-index: 1;
-          font-family: 'Segoe UI', sans-serif;
-          color: #1a1a1a;
-        }
-        .header {
-          background: rgba(255, 255, 255, 0.08);
-          color: #ffffff;
-          padding: 70px 30px;
-          text-align: center;
-          border-radius: 0 0 70px 70px;
-          backdrop-filter: blur(6px);
-        }
-        .tracking-in-expand-fwd-top {
-          animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-          font-size: 3em;
-          margin-bottom: 10px;
-        }
-        .tracking-in-contract {
-          animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-          font-size: 1.3em;
-          font-weight: 300;
-        }
-        @keyframes tracking-in-expand-fwd-top {
-          0% {
-            letter-spacing: -0.5em;
-            transform: translateZ(-700px) translateY(-500px);
-            opacity: 0;
-          }
-          40% { opacity: 0.6; }
-          100% {
-            transform: translateZ(0) translateY(0);
-            opacity: 1;
-          }
-        }
-        @keyframes tracking-in-contract {
-          0% {
-            letter-spacing: 1em;
-            opacity: 0;
-          }
-          40% { opacity: 0.6; }
-          100% {
-            letter-spacing: normal;
-            opacity: 1;
-          }
-        }
-        .section-card {
-          background: rgba(255, 255, 255, 0.08);
-          padding: 40px 30px;
-          margin: 30px auto;
-          max-width: 1000px;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-          backdrop-filter: blur(10px);
-        }
-        .section-card:hover {
-          transform: scale(1.02);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        .section-heading {
-          font-size: 2em;
-          margin-bottom: 20px;
-          color: #ffffff;
-        }
-        .section-text {
-          font-size: 1.05em;
-          line-height: 1.6;
-          margin-bottom: 15px;
-          color: #e0e0e0;
-        }
-        .bullet-list {
-          list-style: disc;
-          padding-left: 20px;
-          font-size: 1.05em;
-          line-height: 1.6;
-          color: #e0e0e0;
-        }
-        .testimonial-card {
-          background-color: #f1f5f9;
-          padding: 20px;
-          margin: 15px 0;
-          border-radius: 10px;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .promo-image {
-          width: 100%;
-          border-radius: 10px;
-          margin-bottom: 15px;
-        }
-          .glow-button {
-  --glow-color: #e4f6f7;
-  --glow-spread-color: rgba(0, 255, 255, 0.3);
-  --enhanced-glow-color: #7af8ff;
-  --btn-color: #0c0c1b;
-  
-  border: 0.25em solid var(--glow-color);
-  padding: 1em 3em;
-  color: var(--glow-color);
-  font-size: 16px;
-  font-weight: bold;
-  background-color: var(--btn-color);
-  border-radius: 1em;
-  outline: none;
-  box-shadow:
-    0 0 1em 0.25em var(--glow-color),
-    0 0 4em 1em var(--glow-spread-color),
-    inset 0 0 0.75em 0.25em var(--glow-color);
-  text-shadow: 0 0 0.5em var(--glow-color);
-  position: relative;
-  transition: all 0.3s ease-in-out;
-}
-
-.glow-button::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  top: 120%;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--glow-spread-color);
-  filter: blur(2em);
-  opacity: 0.7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
-}
-
-.glow-button:hover {
-  color: var(--btn-color);
-  background-color: var(--glow-color);
-  box-shadow:
-    0 0 1em 0.25em var(--glow-color),
-    0 0 4em 2em var(--glow-spread-color),
-    inset 0 0 0.75em 0.25em var(--glow-color);
-}
-
-.glow-button:active {
-  box-shadow:
-    0 0 0.6em 0.25em var(--glow-color),
-    0 0 2.5em 2em var(--glow-spread-color),
-    inset 0 0 0.5em 0.25em var(--glow-color);
-}
-    a {
-  text-decoration: none;
-}
-
-
-        .footer {
-          background: rgba(255, 255, 255, 0.08);
-          backdrop-filter: blur(10px);
-          color: #ffffff;
-          text-align: center;
-          padding: 40px 20px;
-          margin-top: 40px;
-          border-radius: 50px 50px 0 0;
-        }
-        .footer-heading {
-          font-size: 1.8em;
-          margin-bottom: 10px;
-        }
-        .footer-link {
-          color: #60a5fa;
-          text-decoration: underline;
-        }
-      `}</style>
     </div>
   );
 }
