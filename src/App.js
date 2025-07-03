@@ -22,7 +22,7 @@ export default function App() {
   const handleMailto = () => {
     const subject = `LeadSpark Inquiry from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
-    const mailtoLink = `mailto:inystdio1717@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:inystudio1717@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
@@ -136,7 +136,7 @@ export default function App() {
 
       <footer className="footer">
         <h2 className="footer-heading">Let's Connect</h2>
-        <p>Email us at <a href="inystdio1717@gmail.com" className="footer-link">inystdio1717@gmail.com</a></p>
+        <p>Email us at <a href="inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
         <p>&copy; 2025 MailGenX. All rights reserved.</p>
       </footer>
     </div>
