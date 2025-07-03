@@ -20,51 +20,46 @@ export default function App() {
   };
 
   const handleMailto = () => {
-    const subject = `Message from ${formData.name}`;
+    const subject = `LeadSpark Inquiry from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
-    const mailtoLink = `mailto:inystudio1717@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:leadsparkteam@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
-  const testimonials = [
-    { author: 'Sarah J.', quote: 'Working with iNY WebDev was a dream. They delivered everything on time and exceeded expectations!' },
-    { author: 'Mark T.', quote: 'Amazing service! Our new website boosted traffic by 300% in just a month.' },
-    { author: 'Lena D.', quote: 'Professional, reliable, and highly skilled. Highly recommended for any web project.' }
-  ];
-
   const sections = [
     {
-      heading: 'What We Offer',
+      heading: 'Your Email Growth Engine',
       text: [
-        'iNY WebDev is a full-service website development agency offering stunning designs, SEO-optimized content, lightning-fast loading speeds, and mobile responsiveness.',
-        "We're not just developers — we're your digital partners. From the first consultation to post-launch support, we ensure your online presence reflects your brand's personality, values, and goals."
+        'LeadSpark powers your business with verified email lists and strategic email campaigns.',
+        'We help you reach your ideal audience, generate qualified leads, and drive measurable results.'
       ]
     },
     {
       heading: 'Our Services',
-      text: [],
       list: [
-        'Custom Website Design — Unique, user-centric designs that make you stand out.',
-        'E-Commerce Solutions — Sell online with powerful, scalable platforms.',
-        'SEO Optimization — Rank higher and get discovered by your target audience.',
-        'Website Maintenance — We keep your website up-to-date and secure.'
+        'Verified Email Lists — Buy accurate, niche-specific contact lists.',
+        'Cold Email Campaigns — Engage your audience with effective outreach.',
+        'Email Deliverability Optimization — Maximize inbox placement.',
+        'Lead Nurturing — Automated follow-ups that convert.'
       ]
     },
     {
-      heading: 'Why Choose iNY WebDev?',
-      text: [],
+      heading: 'Why Choose LeadSpark?',
       list: [
-        'Experienced Developers & Designers',
-        'Affordable & Transparent Pricing',
-        '24/7 Support & Maintenance',
-        '100% Satisfaction Guarantee',
-        'Proven Track Record Across Industries',
-        'Detailed Project Planning & Execution'
+        'Verified, Ready-to-Use Data',
+        'Affordable Pricing & Transparent Process',
+        'Fast Turnaround Time',
+        'CAN-SPAM & GDPR Compliance',
+        'Results-Driven Approach'
       ]
     }
   ];
 
-  const promoVideos = ['/land.mp4', '/tyj.mp4', '/stayyoung.mp4'];
+  const testimonials = [
+    { author: 'Alex R.', quote: 'LeadSpark helped us triple our email responses in 2 weeks.' },
+    { author: 'Priya K.', quote: 'Reliable, fast, and cost-effective email lists. Highly recommend.' },
+    { author: 'David L.', quote: 'Their cold email campaigns generated leads we couldn’t find elsewhere.' }
+  ];
 
   return (
     <div className="app-container">
@@ -72,9 +67,9 @@ export default function App() {
       <div className="video-overlay"></div>
 
       <header className="header">
-        <h1 className="tracking-in-expand-fwd-top">iNY WebDev</h1>
-        <p className="tracking-in-contract">Crafting Strategic Digital Experiences for Lasting Impact</p>
-      </header>
+  <h1 className="tracking-in-expand-fwd-top">LeadSpark</h1>
+  <p className="tracking-in-contract">Fueling Your Growth with Verified Leads & Strategic Email Campaigns</p>
+</header>
 
       {sections.map((section, idx) => (
         <section key={idx} data-aos="fade-up" className="section-card">
@@ -90,19 +85,6 @@ export default function App() {
         </section>
       ))}
 
-      {promoVideos.map((video, i) => (
-        <section key={i} data-aos="zoom-in" className="section-card">
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="promo-image"
-          />
-        </section>
-      ))}
-
       <section className="section-card" data-aos="fade-up">
         <h2 className="section-heading">What Our Clients Say</h2>
         {testimonials.map((testimonial, i) => (
@@ -113,7 +95,6 @@ export default function App() {
         ))}
       </section>
 
-      {/* Contact Form Section */}
       <section className="section-card" data-aos="fade-up">
         <h2 className="section-heading">Contact Us</h2>
         <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
@@ -142,15 +123,15 @@ export default function App() {
             required
           />
           <button type="button" className="contact-button" onClick={handleMailto}>
-            Send 
+            Send
           </button>
         </form>
       </section>
 
       <footer className="footer">
-        <h2 className="footer-heading">Get in Touch</h2>
-        <p>Email us at <a href="mailto:inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
-        <p>&copy; 2025 iNY WebDev. All rights reserved.</p>
+        <h2 className="footer-heading">Let's Connect</h2>
+        <p>Email us at <a href="mailto:leadsparkteam@example.com" className="footer-link">leadsparkteam@example.com</a></p>
+        <p>&copy; 2025 LeadSpark. All rights reserved.</p>
       </footer>
     </div>
   );
