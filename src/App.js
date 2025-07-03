@@ -30,7 +30,7 @@ export default function App() {
     {
       heading: 'Your Email Growth Engine',
       text: [
-        'LeadSpark powers your business with verified email lists and strategic email campaigns.',
+        'MailGenX powers your business with verified email lists and strategic email campaigns.',
         'We help you reach your ideal audience, generate qualified leads, and drive measurable results.'
       ]
     },
@@ -56,7 +56,7 @@ export default function App() {
   ];
 
   const testimonials = [
-    { author: 'Alex R.', quote: 'LeadSpark helped us triple our email responses in 2 weeks.' },
+    { author: 'Alex R.', quote: 'MailGenX helped us triple our email responses in 2 weeks.' },
     { author: 'Priya K.', quote: 'Reliable, fast, and cost-effective email lists. Highly recommend.' },
     { author: 'David L.', quote: 'Their cold email campaigns generated leads we couldn’t find elsewhere.' }
   ];
