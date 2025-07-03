@@ -67,7 +67,7 @@ export default function App() {
       <div className="video-overlay"></div>
 
       <header className="header">
-  <h1 className="tracking-in-expand-fwd-top">LeadSpark</h1>
+  <h1 className="tracking-in-expand-fwd-top">MailGenX</h1>
   <p className="tracking-in-contract">Fueling Your Growth with Verified Leads & Strategic Email Campaigns</p>
 </header>
 
