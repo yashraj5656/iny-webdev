@@ -44,7 +44,7 @@ export default function App() {
       ]
     },
     {
-      heading: 'Why Choose LeadSpark?',
+      heading: 'Why Choose MailGenX?',
       list: [
         'Verified, Ready-to-Use Data',
         'Affordable Pricing & Transparent Process',
