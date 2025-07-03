@@ -59,53 +59,11 @@ body {
   padding: 100px 30px;
   text-align: center;
   border-radius: 0 0 50px 50px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(3px);
   position: relative;
 }
 
 
-.tracking-in-expand-fwd-top {
-  animation: tracking-in-expand-fwd-top 0.8s ease both;
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #f8f6f5;
-}
-
-.tracking-in-contract {
-  animation: tracking-in-contract 0.8s ease both;
-  font-size: 1.3em;
-  font-weight: 300;
-  color: #f0f6ff;
-}
-
-@keyframes tracking-in-expand-fwd-top {
-  0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-700px) translateY(-500px);
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateZ(0) translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes tracking-in-contract {
-  0% {
-    letter-spacing: 1em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    letter-spacing: normal;
-    opacity: 1;
-  }
-}
 
 .section-card {
   background: rgba(255, 255, 255, 0.05);
@@ -126,7 +84,7 @@ body {
 .section-heading {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #ffa500;
+  color: #f6f6f5;
 }
 
 .section-text,
@@ -168,7 +126,7 @@ body {
 .footer-heading {
   font-size: 1.8em;
   margin-bottom: 10px;
-  color: #ff7500;
+  color: #fbfafa;
 }
 
 .footer-link {
@@ -201,8 +159,8 @@ body {
 }
 
 .contact-button {
-  background-color: #ff7500;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
@@ -228,4 +186,62 @@ body {
 
 .nav a {
   font-weight: 500;
+}
+
+/* Import General Sans from Google Fonts or your preferred modern font */
+@import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@400;600;700&display=swap');
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  height: 50px;
+  width: auto;
+}
+
+.logo-heading {
+  font-family: 'General Sans', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ffffff, #bbbbbb, #ffffff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s ease-in-out infinite;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.logo-heading .highlight {
+  color: #dedbdb;
+  background: linear-gradient(45deg, #ffffff, #bbbbbb, #ffffff);
+  -webkit-text-fill-color: initial;
+  background: none;
+}
+
+/* Shine Animation */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.header-subtitle {
+  font-family: 'General Sans', sans-serif;
+  color: #f6f1f1;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  max-width: 600px;
 }

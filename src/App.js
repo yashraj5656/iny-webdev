@@ -67,9 +67,15 @@ export default function App() {
       <div className="video-overlay"></div>
 
       <header className="header">
-  <h1 className="tracking-in-expand-fwd-top">MailGenX</h1>
-  <p className="tracking-in-contract">Fueling Your Growth with Verified Leads & Strategic Email Campaigns</p>
+  <div className="logo-container">
+    <img src="/mgx.png" alt="MailGenX Logo" className="logo-icon" />
+    <h1 className="logo-heading">
+      Mail<span className="highlight">GenX</span>
+    </h1>
+  </div>
+  <p className="header-subtitle">Fueling Your Growth with Verified Leads & Strategic Email Campaigns</p>
 </header>
+
 
       {sections.map((section, idx) => (
         <section key={idx} data-aos="fade-up" className="section-card">
