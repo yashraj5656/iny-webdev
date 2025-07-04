@@ -28,15 +28,20 @@ export default function App() {
 
   const sections = [
     {
-      heading: 'Your Email Growth Engine',
+      heading: 'Your Direct Growth Engine',
       text: [
-        'MailGenX powers your business with verified email lists and strategic email campaigns.',
-        'We help you reach your ideal audience, generate qualified leads, and drive measurable results.'
+        'MailGenX powers your business with verified email lists, targeted DM marketing, and strategic email campaigns.',
+
+       ' We help you reach your ideal audience, generate qualified leads, and drive measurable results — through the inbox and social DMs.',
+
+        'No skipped ads. No wasted clicks. Just direct conversations that convert.'
+        
       ]
     },
     {
       heading: 'Our Services',
       list: [
+        'DM Marketing — Send targeted Instagram DMs that spark real conversations.',
         'Verified Email Lists — Buy accurate, niche-specific contact lists.',
         'Cold Email Campaigns — Engage your audience with effective outreach.',
         'Email Deliverability Optimization — Maximize inbox placement.',
@@ -46,19 +51,20 @@ export default function App() {
     {
       heading: 'Why Choose MailGenX?',
       list: [
-        'Verified, Ready-to-Use Data',
-        'Affordable Pricing & Transparent Process',
-        'Fast Turnaround Time',
-        'CAN-SPAM & GDPR Compliance',
-        'Results-Driven Approach'
+        'Verified, ready-to-use data (emails and social media contacts)',
+        'Affordable pricing and transparent process',
+        'Fast turnaround time for campaign launch',
+        'Email and DM campaigns with high engagement',
+        'CAN-SPAM & GDPR compliant practices',
+        'Results-driven approach focused on real leads'
       ]
     }
   ];
 
   const testimonials = [
-    { author: 'Alex R.', quote: 'MailGenX helped us triple our email responses in 2 weeks.' },
-    { author: 'Priya K.', quote: 'Reliable, fast, and cost-effective email lists. Highly recommend.' },
-    { author: 'David L.', quote: 'Their cold email campaigns generated leads we couldn’t find elsewhere.' }
+    { author: 'Alex R.', quote: 'MailGenX didn’t just promise results — they delivered. Our email responses tripled in just 2 weeks.' },
+    { author: 'Priya K.', quote: 'Reliable, fast, and cost-effective email & DM lists. Helped us reach the right audience quickly. Highly recommend!' },
+    { author: 'David L.', quote: 'MailGenX’s cold emails and DM outreach helped us reach leads we couldn’t find through any other channel.' }
   ];
 
   return (
@@ -73,7 +79,7 @@ export default function App() {
       Mail<span className="highlight">GenX</span>
     </h1>
   </div>
-  <p className="header-subtitle">Fueling Your Growth with Verified Leads & Strategic Email Campaigns</p>
+  <p className="header-subtitle">Fueling Your Growth with Verified Leads, Email Marketing & Direct DM Conversations</p>
 </header>
 
 
