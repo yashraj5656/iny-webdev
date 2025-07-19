@@ -3,6 +3,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 
+
+
 export default function App() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -20,7 +22,7 @@ export default function App() {
   };
 
   const handleMailto = () => {
-    const subject = `LeadSpark Inquiry from ${formData.name}`;
+    const subject = `WebGenX Inquiry from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
     const mailtoLink = `mailto:inystudio1717@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -28,43 +30,40 @@ export default function App() {
 
   const sections = [
     {
-      heading: 'Your Direct Growth Engine',
+      heading: 'Your Digital Success Partner',
       text: [
-        'MailGenX powers your business with verified email lists, targeted DM marketing, and strategic email campaigns.',
-
-       ' We help you reach your ideal audience, generate qualified leads, and drive measurable results — through the inbox and social DMs.',
-
-        'No skipped ads. No wasted clicks. Just direct conversations that convert.'
-        
+        'WebGenX empowers your business with cutting-edge web development, custom designs, and scalable solutions.',
+        'We craft stunning websites, optimize user experiences, and build robust applications to elevate your online presence.',
+        'No outdated templates. No cookie-cutter designs. Just tailored digital solutions that drive growth.'
       ]
     },
     {
       heading: 'Our Services',
       list: [
-        'DM Marketing — Send targeted Instagram DMs that spark real conversations.',
-        'Verified Email Lists — Buy accurate, niche-specific contact lists.',
-        'Cold Email Campaigns — Engage your audience with effective outreach.',
-        'Email Deliverability Optimization — Maximize inbox placement.',
-        'Lead Nurturing — Automated follow-ups that convert.'
+        'Custom Website Development — Build responsive, high-performance websites.',
+        'UI/UX Design — Create intuitive and engaging user experiences.',
+        'E-Commerce Solutions — Develop secure, scalable online stores.',
+        'Web Application Development — Build powerful, custom web apps.',
+        'SEO Optimization — Boost your site’s visibility and rankings.'
       ]
     },
     {
-      heading: 'Why Choose MailGenX?',
+      heading: 'Why Choose WebGenX?',
       list: [
-        'Verified, ready-to-use data (emails and social media contacts)',
-        'Affordable pricing and transparent process',
-        'Fast turnaround time for campaign launch',
-        'Email and DM campaigns with high engagement',
-        'CAN-SPAM & GDPR compliant practices',
-        'Results-driven approach focused on real leads'
+        'Tailored, high-quality web solutions for all industries',
+        'Affordable pricing with transparent development process',
+        'Fast project delivery with ongoing support',
+        'Responsive designs optimized for all devices',
+        'SEO-friendly websites for better search rankings',
+        'Client-focused approach to achieve your business goals'
       ]
     }
   ];
 
   const testimonials = [
-    { author: 'Alex R.', quote: 'MailGenX didn’t just promise results — they delivered. Our email responses tripled in just 2 weeks.' },
-    { author: 'Priya K.', quote: 'Reliable, fast, and cost-effective email & DM lists. Helped us reach the right audience quickly. Highly recommend!' },
-    { author: 'David L.', quote: 'MailGenX’s cold emails and DM outreach helped us reach leads we couldn’t find through any other channel.' }
+    { author: 'Alex R.', quote: 'WebGenX transformed our online presence with a stunning website. Our traffic doubled in just a month!' },
+    { author: 'Priya K.', quote: 'Their team delivered a seamless e-commerce platform. Fast, reliable, and exactly what we needed!' },
+    { author: 'David L.', quote: 'WebGenX’s custom web app streamlined our operations and boosted user engagement significantly.' }
   ];
 
   return (
@@ -73,15 +72,14 @@ export default function App() {
       <div className="video-overlay"></div>
 
       <header className="header">
-  <div className="logo-container">
-    <img src="/mgx.png" alt="MailGenX Logo" className="logo-icon" />
-    <h1 className="logo-heading">
-      Mail<span className="highlight">GenX</span>
-    </h1>
-  </div>
-  <p className="header-subtitle">Fueling Your Growth with Verified Leads, Email Marketing & Direct DM Conversations</p>
-</header>
-
+        <div className="logo-container">
+          <img src="/WGX.png" alt="WebGenX Logo" className="logo-icon" />
+          <h1 className="logo-heading">
+            Web<span className="highlight">GenX</span>
+          </h1>
+        </div>
+        <p className="header-subtitle">Building Your Future with Custom Web Development, Stunning Designs & Scalable Solutions</p>
+      </header>
 
       {sections.map((section, idx) => (
         <section key={idx} data-aos="fade-up" className="section-card">
@@ -142,8 +140,8 @@ export default function App() {
 
       <footer className="footer">
         <h2 className="footer-heading">Let's Connect</h2>
-        <p>Email us at <a href="inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
-        <p>&copy; 2025 MailGenX. All rights reserved.</p>
+        <p>Email us at <a href="mailto:inystudio1717@gmail.com" className="footer-link">inystudio1717@gmail.com</a></p>
+        <p>© 2025 WebGenX. All rights reserved.</p>
       </footer>
     </div>
   );
